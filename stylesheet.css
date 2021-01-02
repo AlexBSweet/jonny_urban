@@ -1,0 +1,15 @@
+:root {
+  --pink: #FF00FF;
+  --green:#00FF00;
+  --teal: #00FFFF;
+  --blue: #0000FF;
+  --yellow: #FFFF00;
+  --mid-gray: #4D4D4D;
+  --dark-gray: #333333;
+  --white: #ffffff;
+
+
+  --mobile-padding: 40px;
+  --tablet-padding: 60px;
+  --desktop-padding:60px;
+}
