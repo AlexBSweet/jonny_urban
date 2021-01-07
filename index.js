@@ -1,0 +1,7 @@
+const introSection = document.querySelector('section.intro')
+const pinkSection = document.querySelector('section.pink')
+const blueSection = document.querySelector('section.blue')
+const tealSection = document.querySelector('section.teal')
+const whiteSection = document.querySelector('section.white')
+const graySection = document.querySelector('section.gray')
+const greenSection = document.querySelector('section.green')

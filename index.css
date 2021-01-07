@@ -3,7 +3,7 @@ body{
   margin:0;
   font-family: Helvetica, sans-serif;
 }
-p{
+h1, h2, h3, h4, p{
   margin:0;
   padding:0;
 }
@@ -13,7 +13,23 @@ a{
 }
 main section{
   width:100%;
-  min-height:200px;
+  height:200px;
+  overflow:hidden;
+  padding: 44px;
+  font-size: 44px;
+}
+section.open{
+  height:auto;
+}
+.hidden{
+  display:none;
+}
+
+section.intro{
+  background-color: var(--dark-gray);
+  height: 60vh;
+  display: flex;
+  align-items: center;
 }
 
 
