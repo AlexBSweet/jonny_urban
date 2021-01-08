@@ -1,6 +1,9 @@
 const introSection = document.querySelector('section.intro')
 const introInner = introSection.querySelector('div.intro-inner')
 
+const bodySections = document.querySelectorAll('section.body')
+const sectionHeaders = document.querySelectorAll('div.mobile-section-header')
+
 const pinkSection = document.querySelector('section.pink')
 const pinkSectionHeader = pinkSection.querySelector('div.mobile-section-header')
 const pinkInner = pinkSection.querySelector('div.pink-inner')
@@ -24,18 +27,20 @@ const grayInner = graySection.querySelector('div.gray-inner')
 const greenSection = document.querySelector('section.green')
 const greenInner = greenSection.querySelector('div.green-inner')
 
-
+// do sections.for each and select all sections for the scrolling part
+let pixels
 
 document.addEventListener('scroll', ()=>{
-    let pixels = window.pageYOffset
+    pixels = window.pageYOffset
 
     let scrollCount = 0
     if(pixels>20){
-        pinkSection.classList.add('scrolled')
-        blueSection.classList.add('scrolled')
-        tealSection.classList.add('scrolled')
-        whiteSection.classList.add('scrolled')
-        graySection.classList.add('scrolled')
+        bodySections.forEach(section=>{
+            section.classList.add('scrolled')
+        })
+        sectionHeaders.forEach(header=>{
+            header.classList.add('scrolled')
+        })
         
     } else{
         pinkSection.classList.remove('scrolled')
@@ -46,30 +51,28 @@ document.addEventListener('scroll', ()=>{
     }
     if(pixels<40){
         pinkSection.classList.remove('open')
-        pinkSectionHeader.classList.remove('section-open')
+        pinkSectionHeader.classList.remove('scrolled')
         pinkInner.classList.add('hidden')
         blueSection.classList.remove('open')
-        blueSectionHeader.classList.remove('section-open')
+        blueSectionHeader.classList.remove('scrolled')
         blueInner.classList.add('hidden')
         tealSection.classList.remove('open')
-        tealSectionHeader.classList.remove('section-open')
+        tealSectionHeader.classList.remove('scrolled')
         tealInner.classList.add('hidden')
         whiteSection.classList.remove('open')
-        whiteSectionHeader.classList.remove('section-open')
+        whiteSectionHeader.classList.remove('scrolled')
         whiteInner.classList.add('hidden')
         graySection.classList.remove('open')
-        graySectionHeader.classList.remove('section-open')
+        graySectionHeader.classList.remove('scrolled')
         grayInner.classList.add('hidden')
     }
-   
-
 
 })
 
 
 
 pinkSectionHeader.addEventListener('click', ()=>{
-    pinkSection.scrollIntoView({behavior: "smooth", block:"start"})
+    
 
     pinkSection.classList.add('open')
     pinkInner.classList.remove('hidden')
@@ -90,10 +93,11 @@ pinkSectionHeader.addEventListener('click', ()=>{
     graySection.classList.remove('open')
     graySectionHeader.classList.remove('section-open')
     grayInner.classList.add('hidden')
+
+    pinkSection.scrollIntoView({behavior: "smooth", block:"start"})
 })
 
 blueSectionHeader.addEventListener('click', ()=>{
-    blueSection.scrollIntoView({behavior: "smooth"})
 
     pinkSection.classList.remove('open')
     pinkSectionHeader.classList.remove('section-open')
@@ -115,6 +119,8 @@ blueSectionHeader.addEventListener('click', ()=>{
     graySectionHeader.classList.remove('section-open')
     grayInner.classList.add('hidden')
 
+    blueSection.scrollIntoView({behavior: "smooth"})
+
 })
 
 tealSection.addEventListener('click', ()=>{
@@ -127,7 +133,7 @@ tealSection.addEventListener('click', ()=>{
     blueSectionHeader.classList.remove('section-open')
     blueInner.classList.add('hidden')
 
-    tealSection.scrollIntoView({behavior: "smooth"})
+    
     tealSection.classList.add('open')
     tealInner.classList.remove('hidden')
     tealSectionHeader.classList.add('section-open')
@@ -140,6 +146,7 @@ tealSection.addEventListener('click', ()=>{
     graySectionHeader.classList.remove('section-open')
     grayInner.classList.add('hidden')
 
+    tealSection.scrollIntoView({behavior: "smooth"})
 })
 
 
@@ -157,7 +164,7 @@ whiteSection.addEventListener('click', ()=>{
     tealSectionHeader.classList.remove('section-open')
     tealInner.classList.add('hidden')
 
-    whiteSection.scrollIntoView({behavior: "smooth"})
+    
     whiteSection.classList.add('open')
     whiteInner.classList.remove('hidden')
     whiteSectionHeader.classList.add('section-open')
@@ -165,7 +172,8 @@ whiteSection.addEventListener('click', ()=>{
     graySection.classList.remove('open')
     graySectionHeader.classList.remove('section-open')
     grayInner.classList.add('hidden')
-
+    
+    whiteSection.scrollIntoView({behavior: "smooth"})
 })
 
 
