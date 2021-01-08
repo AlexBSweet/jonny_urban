@@ -13,3 +13,24 @@
   --tablet-padding: 60px;
   --desktop-padding:60px;
 }
+.pink{
+  color: var(--pink);
+}
+.green{
+  color: var(--green);
+}
+.teal{
+  color: var(--teal);
+}
+.blue{
+  color: var(--blue);
+}
+.yellow{
+  color: var(--yellow);
+}
+.dark-gray{
+  color: var(--dark-gray);
+}
+.white{
+  color: var(--white);
+}
