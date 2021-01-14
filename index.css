@@ -129,47 +129,91 @@ section.green{
 section.footer {
   font-size:12px;
 }
+div.green-inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:4vh;
+}
+div.green-inner h1{
+  font-size:18px;
+}
+img.dot-icon{
+  max-width: 18px;
+}
+
 
 
 
 
 @media(min-width:900px){
-  main{
-    display:flex;
-    width:100vw;
-  }
-main section{
-  overflow:scroll;
-}
-.hidden{
-  opacity: 1;
-}
-  section.body.initial{
-    height:90vh;
-  }
-  section.intro{
-    display:none;
-  }
-  section.pink{
-    flex: 0 0 50%;
-  }
-  section.blue{
-    flex: 0 0 30%;
-  }
-  section.teal{
-    flex: 0 0 6.6666%;
-  }
-  section.white{
-    flex: 0 0 6.6666%;
-  }
-  section.grey{
-    flex: 0 0 6.6666%;
-  }
-  section.footer{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100vw;
-    height:10vh;
-  }
+      main{
+        display:flex;
+        width:100vw;
+      }
+      h1{
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+      h2{
+        line-height: 1.2;
+      }
+      main section{
+        overflow:scroll;
+        position:relative;
+      }
+      .hidden{
+        opacity: 1;
+      }
+
+      div.desktop-text{
+        display:block;
+        color:black;
+        position:absolute;
+        top:40px;
+        font-size:12px;
+        font-weight:500;
+      }
+      div.desktop-text.white{
+        color:white;
+      }
+        section.body.initial{
+          height:90vh;
+          overflow:scroll;
+          padding:300px 24px 100px 24px;
+          transition: flex 0.7s cubic-bezier(0.74, 0.04, 0.25, 1);
+        }
+        section.intro{
+          display:none;
+        }
+        section.desktop-1{
+          flex: 0 0 50%;
+        }
+        section.body.initial.desktop-2{
+          flex: 0 0 30%;
+          overflow-x: hidden;
+          overflow-y: hidden;
+        }
+        section.body.initial.desktop-3{
+          flex: 0 0 6.6666%;
+          overflow-x: hidden;
+          overflow-y: hidden;
+        }
+
+        section.pink h2{
+          font-size:5vh;
+          letter-spacing: -0.02em;
+        }
+
+
+
+
+
+        section.footer{
+          position:fixed;
+          bottom:0;
+          left:0;
+          width:100vw;
+          height:10vh;
+        }
 }
