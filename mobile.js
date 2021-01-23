@@ -194,6 +194,11 @@ const allFunctions = ()=>{
 
     pinkSectionHeader.addEventListener('click', ()=>{
         if(mobile.matches){
+
+            // let pinkHeight = pinkInner.clientHeight + 48
+            // console.log(pinkHeight)
+            // pinkSection.style.height= pinkHeight + 'px'
+
             pinkSection.classList.add('open')
             pinkInner.classList.remove('hidden')
             pinkSectionHeader.classList.add('section-open')

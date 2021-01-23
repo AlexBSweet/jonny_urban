@@ -24,13 +24,15 @@ main section{
   box-sizing: border-box;
 }
 section.open{
-  height:auto;
+  max-height:1500px;
 }
 .hidden{
   opacity: 0;
   padding:0;
 }
-
+.desktop-text{
+  display:none;
+}
 
 
 
@@ -52,7 +54,7 @@ section.body{
 }
 section.body.initial{
   height: 4vh;
-  padding:0px;
+  padding:0px 0px 0px 24px;
   overflow:hidden;
 }
 
@@ -97,7 +99,9 @@ section.pink .text-accent{
 section.blue{
   background-color: var(--blue);
 }
-
+div.bl-header img{
+  max-width: 100%;
+}
 
 
 section.teal{
