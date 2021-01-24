@@ -16,7 +16,7 @@ window.addEventListener('scroll', ()=>{
     if(content.style.opacity <= 1){
         content.style.opacity= px
     }
-
+    console.log(pixels)
 
     if(content.style.opacity >= 1){
         content.classList.add('opacity')
@@ -27,46 +27,61 @@ window.addEventListener('scroll', ()=>{
 })
 
 
-sectA.addEventListener('click', ()=>{
-    // On click, scroll to top of content container
-    content.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
-    // After scrolled to top of container open sect A container
-      setTimeout(function(){ 
-        sectA.classList.add('full')
-        sectA.classList.remove('min')
-        sectA.classList.remove('a-min')
+let scroll = 0
 
-    }, 300);
-
- 
-
-    sectB.classList.remove('full')
-    sectB.classList.remove('min')
-
-    sectC.classList.remove('full')
+content.addEventListener('scroll', ()=>{
+     scroll = 1
 })
 
-sectB.addEventListener('click', ()=>{
-
-// close top section, scroll to top, open B section
-
-    sectA.classList.remove('full')
-    sectA.classList.add('min')
-    sectA.classList.add('a-min')
-    
 
 
-      setTimeout(function(){ 
+sectA.addEventListener('click', ()=>{
+
+        // On click, scroll to top of content container
         content.scrollTo({
             top: 0,
             left: 0,
             behavior: 'smooth'
           });
-    }, 1100);
+        //   Close all other containers
+        sectB.classList.remove('full')
+        sectB.classList.remove('min')
+
+        sectC.classList.remove('full')
+
+        // Open Section A container
+        setTimeout(function(){ 
+            sectA.classList.add('full')
+            sectA.classList.remove('min')
+            sectA.classList.remove('a-min')
+    
+        }, 300);
+   
+
+    scroll=0
+    
+})
+
+sectB.addEventListener('click', ()=>{
+
+// close top section, scroll to top, open B section
+    // setTimeout(function(){ 
+    //     sectB.classList.add('full')
+    // sectB.classList.remove('min')
+    // sectB.classList.remove('b-min')
+
+    // }, 500);
+
+
+    //   Close all other containers
+    sectA.classList.remove('full')
+    sectA.classList.add('min')
+    sectA.classList.add('a-min')
+
+    sectC.classList.remove('full')
+
+
+     //   Open Sect B container
 
     setTimeout(function(){ 
         sectB.classList.add('full')
@@ -76,11 +91,11 @@ sectB.addEventListener('click', ()=>{
     }, 500);
   
 
-    sectC.classList.remove('full')
+   
 })
 
 sectC.addEventListener('click', ()=>{
-    content.scrollTo(0,0)
+    // content.scrollTo(0,0)
     sectA.classList.remove('full')
     sectA.classList.add('min')
     sectA.classList.add('a-min')

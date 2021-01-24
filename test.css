@@ -1,6 +1,9 @@
 html {
     scroll-behavior: smooth;
   }
+p{
+    margin:0;
+}
 body.fixed{
     position:fixed;
 }
