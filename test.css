@@ -11,12 +11,12 @@ main{
     scroll-snap-type:y mandatory;
 }
 section.intro{
-    height: 200vh;
+    height: 100vh;
     background-color:var(--dark-gray);
     scroll-snap-align: start;
 }
 section.content{
-    opacity:0;
+    opacity:1;
     height:100vh;
     scroll-snap-align: start;
     position:fixed;
@@ -34,8 +34,9 @@ section.content.opacity{
 }
 
 .content section {
-    height:15vh;
+    height:5vh;
     transition: all 0.5s ease;
+    overflow:scroll;
 }
 section.a{
     background-color:blue;
@@ -45,6 +46,12 @@ section.b{
 }
 section.c{
     background-color:orange;
+}
+section.c div{
+    height:200px;
+    margin-bottom:30px;
+    width:100px;
+    background-color:blue;
 }
 section.d{
     background-color:green;
@@ -57,7 +64,7 @@ section.f{
 }
 
 .content section.full{
-    height:50vh;
+    height:75vh;
 }
 .content section.min{
     height:5vh;
@@ -74,3 +81,22 @@ section.f{
     left:0;
     width:100%;
 }
+.content section.c-min{
+    position:sticky;
+    top:10vh;
+    left:0;
+    width:100%;
+}
+.content section.d-min{
+    position:sticky;
+    top:15vh;
+    left:0;
+    width:100%;
+}
+.content section.e-min{
+    position:sticky;
+    top:20vh;
+    left:0;
+    width:100%;
+}
+

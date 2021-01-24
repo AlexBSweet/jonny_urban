@@ -8,23 +8,23 @@ const sectE = document.querySelector('section.e')
 const sectF = document.querySelector('section.f')
 
 let pixels
-window.addEventListener('scroll', ()=>{
-    pixels=window.pageYOffset
+// window.addEventListener('scroll', ()=>{
+//     pixels=window.pageYOffset
 
-    let px = pixels/800
+//     let px = pixels/800
 
-    if(content.style.opacity <= 1){
-        content.style.opacity= px
-    }
-    console.log(pixels)
+//     if(content.style.opacity <= 1){
+//         content.style.opacity= px
+//     }
+//     console.log(pixels)
 
-    if(content.style.opacity >= 1){
-        content.classList.add('opacity')
-        body.classList.add('fixed')
-    }
+//     if(content.style.opacity >= 1){
+//         content.classList.add('opacity')
+//         body.classList.add('fixed')
+//     }
   
 
-})
+// })
 
 
 let scroll = 0
