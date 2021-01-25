@@ -7,13 +7,17 @@ body.fixed{
 main{
     scroll-snap-type:y mandatory;
 }
+p{
+    font-size: 36px;
+    font-family: sans-serif;
+}
 section.intro{
-    height: 200vh;
+    height: 100vh;
     background-color:var(--dark-gray);
     scroll-snap-align: start;
 }
 section.content{
-    opacity:0;
+    opacity:1;
     height:100vh;
     scroll-snap-align: start;
     position:fixed;
@@ -30,34 +34,92 @@ section.content.opacity{
     opacity: 1;
 }
 
-.content section {
-    height:15vh;
-    transition: all 0.5s ease;
-}
+
+
+
 section.a{
     background-color:blue;
 }
+section.a div{
+    background-color:yellow;
+}
+
 section.b{
     background-color:red;
 }
+section.b div{
+    background-color:green;
+}
+
 section.c{
     background-color:orange;
 }
+section.c div{
+    background-color:blue;
+}
+
 section.d{
     background-color:green;
 }
+section.d div{
+    background-color:red;
+}
+
 section.e{
     background-color:yellow;
 }
+section.e div{
+    background-color:blue;
+}
+
+
 section.f{
     background-color:purple;
 }
 
-.content section.full{
-    height:50vh;
+
+.content section {
+    max-height:15vh;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+.content section p {
+    opacity: 0;
+}
+.content section div{
+    max-height:50px;
+    width:100px;
+    margin-bottom:100px;
+}
+
+
+/* transition changes length based on max heighht - this is to skirt to the inability to transition between height with a px value and auto height */
+.content section.a.full{
+    max-height:400px;
+    transition: all 0.5s ease;
+}
+.content section.b.full{
+    max-height:1400px;
+    transition: all 1s ease;
+}
+.content section.c.full{
+    max-height:1400px;
+    transition: all 1s ease;
+}
+.content section.d.full{
+    max-height:1400px;
+    transition: all 1s ease;
+}
+.content section.e.full{
+    max-height:1400px;
+    transition: all 1s ease;
+}
+.content section.f.full{
+    max-height:1400px;
+    transition: all 1s ease;
 }
 .content section.min{
-    height:5vh;
+    max-height:3vh;
 }
 .content section.a-min{
     position:sticky;
@@ -67,7 +129,25 @@ section.f{
 }
 .content section.b-min{
     position:sticky;
-    top:5vh;
+    top:3vh;
+    left:0;
+    width:100%;
+}
+.content section.c-min{
+    position:sticky;
+    top:6vh;
+    left:0;
+    width:100%;
+}
+.content section.d-min{
+    position:sticky;
+    top:9vh;
+    left:0;
+    width:100%;
+}
+.content section.e-min{
+    position:sticky;
+    top:12vh;
     left:0;
     width:100%;
 }
