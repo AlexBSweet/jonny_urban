@@ -16,6 +16,20 @@ section.intro{
     background-color:var(--dark-gray);
     scroll-snap-align: start;
 }
+section.intro div{
+    height:100px;
+    width:100px;
+    background-color: white;
+    border-radius:50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 3;
+    top:10px;
+    right:0px;
+    transform: translate(-50%, -50%);
+}
 section.content{
     opacity:1;
     height:100vh;
@@ -29,6 +43,11 @@ section.content{
     overflow:scroll;
     /* padding: 24px; */
     box-sizing: border-box;
+    transform:translateY(100%);
+    transition: all 0.5s ease;
+}
+section.content.open{
+    transform:translateY(2%);
 }
 section.content.opacity{
     opacity: 1;
@@ -83,6 +102,7 @@ section.f{
     overflow: hidden;
     transition: all 0.5s ease;
 }
+
 .content section p {
     opacity: 0;
 }
@@ -112,7 +132,7 @@ section.f{
 }
 .content section.e.full{
     max-height:1400px;
-    transition: all 1s ease;
+    transition: all 1.5s ease;
 }
 .content section.f.full{
     max-height:1400px;

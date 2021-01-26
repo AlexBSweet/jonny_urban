@@ -16,12 +16,30 @@ a{
   color: var(--dark-gray);
   text-decoration: none;
 }
+main{
+  overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+  max-height: 100vh;
+}
 main section{
   /* width:100%; */
   overflow:hidden;
   padding: 24px;
   transition: all 0.3s ease;
   box-sizing: border-box;
+  /* position:sticky;
+  top:0;
+  left:0; */
+  scroll-snap-align: start;
+  height: 100vh;
+  overflow-y:auto;
+  width: 100%;
+  position: sticky;
+  top: 0;
+
+}
+@media(max-width:900px){
+
 }
 section.open{
   max-height:1500px;
@@ -53,7 +71,6 @@ section.body{
   transition: height 0.5s ease;
 }
 section.body.initial{
-  height: 4vh;
   padding:0px 0px 0px 24px;
   overflow:hidden;
 }
@@ -138,11 +155,21 @@ section.gray{
 
 
 
-
+footer{
+  width:100%;
+  height:40px;
+  bottom:0px;
+  left:0px;
+  position:fixed;
+  background-color: red;
+}
 
 section.green{
   background-color: var(--green);
   height:15vh;
+  position:fixed;
+  bottom:0;
+  left:0;
 }
 section.footer {
   font-size:12px;

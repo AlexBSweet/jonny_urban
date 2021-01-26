@@ -1,6 +1,6 @@
 
 
-
+const button = document.querySelector('div.open')
 
 const content = document.querySelector('section.content')
 const body = document.querySelector('body')
@@ -17,27 +17,19 @@ const sectEContent = document.querySelector('section.e p')
 const sectF = document.querySelector('section.f')
 const sectFContent = document.querySelector('section.f p')
 
-let pixels
-// window.addEventListener('scroll', ()=>{
-//     pixels=window.pageYOffset
-
-//     let px = pixels/800
-
-//     if(content.style.opacity <= 1){
-//         content.style.opacity= px
-//     }
 
 
-//     if(content.style.opacity >= 1){
-//         content.classList.add('opacity')
-//         body.classList.add('fixed')
-//     }
-  
 
-// })
+button.addEventListener('click', ()=>{
+    content.classList.toggle('open')
+})
+
+
+
 
 // SECT A ===================================================================================
 
+sectAContent.style.opacity=1 
 
 sectA.addEventListener('click', ()=>{
 
@@ -52,7 +44,7 @@ sectA.addEventListener('click', ()=>{
         sectA.classList.remove('min')
         sectA.classList.remove('a-min')
 
-    }, 300);
+    }, 00);
 
     setTimeout(function(){ 
         sectB.classList.remove('full')
@@ -70,25 +62,26 @@ sectA.addEventListener('click', ()=>{
         sectF.classList.remove('full')
         sectF.classList.remove('min')
 
-    }, 500);
+    }, 300);
 
-    sectAContent.style.opacity = 1
 
-    sectBContent.style.opacity = 0
-    sectCContent.style.opacity = 0
-    sectDContent.style.opacity = 0
-    sectEContent.style.opacity = 0
-    sectFContent.style.opacity = 0
 
-// if container on top is open
-// 1. scroll to top
-// 2. close container on top
-// 3. open clicked container
+    // OPACITY FUNCTIONS==============================================
+    setTimeout(function(){ 
+        sectAContent.style.opacity = 1
 
-// if container on bottom is open
-// 1. open the clicked container
-// 2. close any containers below it
-    
+        }, 200);
+
+    setTimeout(function(){ 
+        sectBContent.style.opacity = 0
+        sectCContent.style.opacity = 0
+        sectDContent.style.opacity = 0
+        sectEContent.style.opacity = 0
+        sectFContent.style.opacity = 0
+        }, 00);
+
+
+
 })
 
 
@@ -99,14 +92,7 @@ sectA.addEventListener('click', ()=>{
 
 sectB.addEventListener('click', ()=>{
 
-    
-    sectBContent.style.opacity = 1
 
-    sectAContent.style.opacity = 0
-    sectCContent.style.opacity = 0
-    sectDContent.style.opacity = 0
-    sectEContent.style.opacity = 0
-    sectFContent.style.opacity = 0
 
     // container on top is open
     if(sectA.classList.contains('full')){
@@ -118,19 +104,30 @@ sectB.addEventListener('click', ()=>{
             behavior: 'smooth'
           });
 
+        //   do not need the delay on A since there's no scrolling to the top
         setTimeout(function(){ 
             sectA.classList.remove('full')
             sectA.classList.add('min')
             sectA.classList.add('a-min')
 
-        }, 500);
+        }, 00);
 
         setTimeout(function(){ 
             sectB.classList.add('full')
             sectB.classList.remove('min')
             sectB.classList.remove('b-min')
     
-         }, 1100);
+         }, 500);
+
+        // OPACITY FUNCTIONS==============================================
+        setTimeout(function(){ 
+        sectBContent.style.opacity = 1
+
+        }, 200);
+
+    setTimeout(function(){ 
+        sectAContent.style.opacity = 0
+        }, 800);
     }
 
 
@@ -151,10 +148,29 @@ sectB.addEventListener('click', ()=>{
             sectB.classList.remove('b-min')
     
             }, 00);
+
+                    // OPACITY FUNCTIONS==============================================
+        setTimeout(function(){ 
+            sectBContent.style.opacity = 1
+    
+            }, 200);
+    
+        setTimeout(function(){ 
+            sectCContent.style.opacity = 0
+            sectDContent.style.opacity = 0
+            sectEContent.style.opacity = 0
+            sectFContent.style.opacity = 0
+            }, 800);
     
             sectC.classList.remove('full')
+            sectC.classList.remove('c-min')
+            sectC.classList.remove('min')
             sectD.classList.remove('full')
+            sectD.classList.remove('d-min')
+            sectD.classList.remove('min')
             sectE.classList.remove('full')
+            sectE.classList.remove('min')
+            sectE.classList.remove('e-min')
             sectF.classList.remove('full')
     }
 
@@ -169,42 +185,100 @@ sectB.addEventListener('click', ()=>{
 
 sectC.addEventListener('click', ()=>{
 
-    sectCContent.style.opacity = 1
 
-    sectAContent.style.opacity = 0
-    sectBContent.style.opacity = 0
-    sectDContent.style.opacity = 0
-    sectEContent.style.opacity = 0
-    sectFContent.style.opacity = 0
  
-        // container on top is open
-        if(sectA.classList.contains('full') || sectB.classList.contains('full')){
-            console.log('top-open')
-    
-            content.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-              });
-    
-            setTimeout(function(){ 
-                sectA.classList.remove('full')
-                sectA.classList.add('min')
-                sectA.classList.add('a-min')
-    
-            }, 500);
-    
-            setTimeout(function(){ 
-                sectB.classList.remove('full')
-                sectB.classList.add('min')
-                sectB.classList.add('b-min')
-        
-             }, 500);
 
+    // container on top is open & container is section A
+    // if section A is open - do not need the delay on A since there's no scrolling to the top
+    if(sectA.classList.contains('full')){
+        console.log('top-open')
+
+        content.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+
+
+        setTimeout(function(){ 
+            sectA.classList.remove('full')
+            sectA.classList.add('min')
+            sectA.classList.add('a-min')
+
+        }, 00);
+
+        setTimeout(function(){ 
+            sectB.classList.remove('full')
+            sectB.classList.add('min')
+            sectB.classList.add('b-min')
+
+        }, 00);
+
+        setTimeout(function(){ 
             sectC.classList.add('full')
             sectC.classList.remove('min')
             sectC.classList.remove('c-min')
-        }
+    
+         }, 500);
+
+        // OPACITY FUNCTIONS==============================================
+        setTimeout(function(){ 
+            sectCContent.style.opacity = 1
+
+            }, 200);
+
+        setTimeout(function(){ 
+            sectAContent.style.opacity = 0
+            }, 800);
+    } 
+    // container on top is open & container is section B
+    else if(sectB.classList.contains('full')){
+        console.log('top-open')
+    
+        content.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+        //  CLOSE THESE SECTIONS
+        setTimeout(function(){ 
+            sectA.classList.remove('full')
+            sectA.classList.add('min')
+            sectA.classList.add('a-min')
+
+        }, 500);
+
+        setTimeout(function(){ 
+            sectB.classList.remove('full')
+            sectB.classList.add('min')
+            sectB.classList.add('b-min')
+    
+         }, 500);
+
+        //  OPEN THIS SECTION
+         setTimeout(function(){ 
+            sectC.classList.add('full')
+            sectC.classList.remove('min')
+            sectC.classList.remove('c-min')
+    
+         }, 800);
+
+    // OPACITY FUNCTIONS==============================================
+     setTimeout(function(){ 
+        sectCContent.style.opacity = 1
+
+     }, 200);
+
+    setTimeout(function(){ 
+        sectAContent.style.opacity = 0
+        sectBContent.style.opacity = 0
+        sectDContent.style.opacity = 0
+        sectEContent.style.opacity = 0
+        sectFContent.style.opacity = 0
+
+     }, 800);
+    }
+     
 
         // container on bottom is open
 
@@ -225,9 +299,29 @@ sectC.addEventListener('click', ()=>{
                 }, 00);
                 
                 sectD.classList.remove('full')
+                sectD.classList.remove('min')
+                sectD.classList.remove('d-min')
                 sectE.classList.remove('full')
+                sectE.classList.remove('min')
+                sectE.classList.remove('e-min')
                 sectF.classList.remove('full')
+
+                    // OPACITY FUNCTIONS==============================================
+                setTimeout(function(){ 
+                    sectCContent.style.opacity = 1
+
+                }, 200);
+
+                setTimeout(function(){ 
+                    sectAContent.style.opacity = 0
+                    sectBContent.style.opacity = 0
+                    sectDContent.style.opacity = 0
+                    sectEContent.style.opacity = 0
+                    sectFContent.style.opacity = 0
+
+                }, 800);
         }
+
    
 })
 
@@ -241,17 +335,63 @@ sectC.addEventListener('click', ()=>{
 
 sectD.addEventListener('click', ()=>{
 
-    sectDContent.style.opacity = 1
-
-    sectAContent.style.opacity = 0
-    sectBContent.style.opacity = 0
-    sectCContent.style.opacity = 0
-    sectEContent.style.opacity = 0
-    sectFContent.style.opacity = 0
+   
  
-    // container on top is open
-    if(sectA.classList.contains('full') || sectB.classList.contains('full') || sectC.classList.contains('full')){
+    // container on top is open & container is section A
+
+    if(sectA.classList.contains('full')){
         console.log('top-open')
+
+        content.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+
+
+        setTimeout(function(){ 
+            sectA.classList.remove('full')
+            sectA.classList.add('min')
+            sectA.classList.add('a-min')
+
+        }, 00);
+
+        setTimeout(function(){ 
+            sectB.classList.add('min')
+            sectB.classList.add('b-min')
+
+        }, 00);
+
+        setTimeout(function(){ 
+            sectC.classList.add('min')
+            sectC.classList.add('c-min')
+
+        }, 00);
+
+
+        setTimeout(function(){ 
+            sectD.classList.add('full')
+            sectD.classList.remove('min')
+            sectD.classList.remove('d-min')
+    
+         }, 500);
+
+            // OPACITY FUNCTIONS==============================================
+            setTimeout(function(){ 
+            sectDContent.style.opacity = 1
+
+            }, 200);
+
+        setTimeout(function(){ 
+            sectAContent.style.opacity = 0
+            }, 800);
+    }
+
+    // container on top is open & container is section B or C
+    else if(sectB.classList.contains('full') || sectC.classList.contains('full')){
+        console.log('top-open')
+
+  
 
         content.scrollTo({
             top: 0,
@@ -280,15 +420,43 @@ sectD.addEventListener('click', ()=>{
     
          }, 500);
 
-         sectD.classList.add('full')
-         sectD.classList.remove('min')
-         sectD.classList.remove('d-min')
+         setTimeout(function(){ 
+            sectD.classList.add('full')
+            sectD.classList.remove('min')
+            sectD.classList.remove('d-min')
+    
+         }, 800);
+
+
+        // OPACITY FUNCTIONS==============================================
+         setTimeout(function(){ 
+            sectDContent.style.opacity = 1
+    
+         }, 200);
+
+        setTimeout(function(){ 
+            sectAContent.style.opacity = 0
+            sectBContent.style.opacity = 0
+            sectCContent.style.opacity = 0
+            sectEContent.style.opacity = 0
+            sectFContent.style.opacity = 0
+    
+         }, 800);
+  
     }
 
 
     // container on bottom is open
     if(sectE.classList.contains('full') || sectF.classList.contains('full')){
         console.log('bottom-open')
+
+        sectDContent.style.opacity = 1
+
+        sectAContent.style.opacity = 0
+        sectBContent.style.opacity = 0
+        sectCContent.style.opacity = 0
+        sectEContent.style.opacity = 0
+        sectFContent.style.opacity = 0
 
         content.scrollTo({
             top: 0,
@@ -304,27 +472,78 @@ sectD.addEventListener('click', ()=>{
             }, 00);
             
             sectE.classList.remove('full')
+            sectE.classList.remove('min')
+            sectE.classList.remove('e-min')
             sectF.classList.remove('full')
     }
 })
 
 
 
-// SECT E ===================================================================================
+// SECT E YELLOW ===================================================================================
 
 
 sectE.addEventListener('click', ()=>{
  
-    sectEContent.style.opacity = 1
+   
+    // container on top is open & container is section A
 
-    sectAContent.style.opacity = 0
-    sectBContent.style.opacity = 0
-    sectCContent.style.opacity = 0
-    sectDContent.style.opacity = 0
-    sectFContent.style.opacity = 0
+    if(sectA.classList.contains('full')){
+        console.log('top-open')
 
-    // container on top is open
-    if(sectA.classList.contains('full') || sectB.classList.contains('full') || sectC.classList.contains('full') || sectD.classList.contains('full')){
+        content.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+
+
+        setTimeout(function(){ 
+            sectA.classList.remove('full')
+            sectA.classList.add('min')
+            sectA.classList.add('a-min')
+
+        }, 00);
+
+        setTimeout(function(){ 
+            sectB.classList.add('min')
+            sectB.classList.add('b-min')
+
+        }, 00);
+
+        setTimeout(function(){ 
+            sectC.classList.add('min')
+            sectC.classList.add('c-min')
+
+        }, 00);
+
+        setTimeout(function(){ 
+            sectD.classList.add('min')
+            sectD.classList.add('d-min')
+
+        }, 00);
+
+
+        setTimeout(function(){ 
+            sectE.classList.add('full')
+            sectE.classList.remove('min')
+            sectE.classList.remove('d-min')
+    
+         }, 500);
+
+            // OPACITY FUNCTIONS==============================================
+            setTimeout(function(){ 
+            sectEContent.style.opacity = 1
+
+            }, 200);
+
+        setTimeout(function(){ 
+            sectAContent.style.opacity = 0
+            }, 800);
+    }
+
+    // container on top is open & is not container A
+    if(sectB.classList.contains('full') || sectC.classList.contains('full') || sectD.classList.contains('full')){
         console.log('top-open')
 
         content.scrollTo({
@@ -368,13 +587,36 @@ sectE.addEventListener('click', ()=>{
     
          }, 800);
 
-       
+
+// OPACITY FUNCTIONS =====================================================
+         setTimeout(function(){ 
+            sectEContent.style.opacity = 1
+    
+         }, 200);
+
+        setTimeout(function(){ 
+            sectAContent.style.opacity = 0
+            sectBContent.style.opacity = 0
+            sectCContent.style.opacity = 0
+            sectDContent.style.opacity = 0
+            sectFContent.style.opacity = 0
+    
+         }, 800);
+    
     }
 
 
     // container on bottom is open
     if(sectF.classList.contains('full')){
         console.log('bottom-open')
+
+        sectEContent.style.opacity = 1
+
+        sectAContent.style.opacity = 0
+        sectBContent.style.opacity = 0
+        sectCContent.style.opacity = 0
+        sectDContent.style.opacity = 0
+        sectFContent.style.opacity = 0
 
         content.scrollTo({
             top: 0,
