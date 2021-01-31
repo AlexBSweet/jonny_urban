@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="918" height="114" viewBox="0 0 918 114">
+  <defs>
+    <clipPath id="clip-SCALE_small_screen">
+      <rect width="918" height="114"/>
+    </clipPath>
+  </defs>
+  <g id="SCALE_small_screen" clip-path="url(#clip-SCALE_small_screen)">
+    <g id="Group_1" data-name="Group 1" transform="translate(-292 -653)">
+      <path id="Union_1" data-name="Union 1" d="M994-366v-19H292v-88h916v88h-28v19Z" transform="translate(0 1130)" fill="#fffe00"/>
+      <text id="_SCALE" data-name="////////////////////////////////////////SCALE" transform="translate(309 720)" fill="#081eff" font-size="48" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"><tspan x="0" y="0">////////////////////////////////////////SCALE</tspan></text>
+    </g>
+  </g>
+</svg>

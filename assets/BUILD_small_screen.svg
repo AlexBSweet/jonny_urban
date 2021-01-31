@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="918" height="142" viewBox="0 0 918 142">
+  <defs>
+    <clipPath id="clip-BUILD_small_screen">
+      <rect width="918" height="142"/>
+    </clipPath>
+  </defs>
+  <g id="BUILD_small_screen" clip-path="url(#clip-BUILD_small_screen)">
+    <g id="Group_1" data-name="Group 1" transform="translate(-292 -633)">
+      <path id="Union_3" data-name="Union 3" d="M1095-547v-14h85v14ZM292-561v-63H968v-13h218v13h22v63Z" transform="translate(0 1290)" fill="#fffe00"/>
+      <text id="_BUILD" data-name="/////////////////////////////////////////BUILD" transform="translate(309 720)" fill="#081eff" font-size="48" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"><tspan x="0" y="0">/////////////////////////////////////////BUILD</tspan></text>
+    </g>
+  </g>
+</svg>
