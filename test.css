@@ -1,173 +1,289 @@
 html {
-    scroll-behavior: smooth;
-  }
-body.fixed{
-    position:fixed;
+  scroll-behavior: smooth;
 }
-main{
-    scroll-snap-type:y mandatory;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: var(--dark-gray);
+  font-family: sans-serif;
 }
-p{
-    font-size: 36px;
-    font-family: sans-serif;
+main {
+  scroll-snap-type: y mandatory;
 }
-section.intro{
-    height: 100vh;
-    background-color:var(--dark-gray);
-    scroll-snap-align: start;
+p {
+  font-size: 3vh;
+  font-family: sans-serif;
+  margin: 0;
 }
-section.intro div{
-    height:100px;
-    width:100px;
-    background-color: white;
-    border-radius:50%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    z-index: 3;
-    top:10px;
-    right:0px;
-    transform: translate(-50%, -50%);
+a {
+  font-family: sans-serif;
+  color: var(--dark-gray);
+  text-decoration: none;
 }
-section.content{
-    opacity:1;
-    height:100vh;
-    scroll-snap-align: start;
-    position:fixed;
-    background-color:gray;
-    z-index: 2;
-    top:0;
-    left:0;
-    width:100%;
-    overflow:scroll;
-    /* padding: 24px; */
-    box-sizing: border-box;
-    transform:translateY(100%);
-    transition: all 0.5s ease;
+section.intro {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: var(--dark-gray);
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
 }
-section.content.open{
-    transform:translateY(2%);
+section.intro div {
+  font-size: 26px;
+  font-family: sans-serif;
+  font-weight: 700;
+  margin-left: 24px;
 }
-section.content.opacity{
-    opacity: 1;
+section.intro div span:nth-child(1) {
+  color: var(--teal);
 }
-
-
-
-
-section.a{
-    background-color:blue;
+section.intro div span:nth-child(2) {
+  color: var(--green);
 }
-section.a div{
-    background-color:yellow;
+section.intro div span:nth-child(3) {
+  color: var(--pink);
 }
-
-section.b{
-    background-color:red;
+section.content {
+  opacity: 1;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  scroll-snap-align: start;
+  position: fixed;
+  background-color: var(--dark-gray);
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: scroll;
+  /* padding: 24px; */
+  box-sizing: border-box;
+  transform: translateY(calc(var(--vh, 1vh) * 78));
+  transition: all 0.5s ease;
+  padding-bottom: 24px;
 }
-section.b div{
-    background-color:green;
+section.content.open {
+  transform: translateY(3vh);
 }
-
-section.c{
-    background-color:orange;
+/* .hidden {
+  opacity: 0;
+} */
+.desktop-text {
+  display: none;
+  font-size: 12px;
 }
-section.c div{
-    background-color:blue;
+div.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+  padding: 0px 24px;
+  height: 12vh;
+  align-items: center;
+  transition: all 0.3s ease;
+  transition-delay: 0.5s;
 }
-
-section.d{
-    background-color:green;
+div.mobile-header.large {
+  font-size: 20px;
 }
-section.d div{
-    background-color:red;
-}
-
-section.e{
-    background-color:yellow;
-}
-section.e div{
-    background-color:blue;
-}
-
-
-section.f{
-    background-color:purple;
+div.desktop-header {
+  display: none;
+  font-size: 28px;
 }
 
+section.a {
+  background-color: var(--pink);
+  color: var(--blue);
+}
+
+section.b {
+  background-color: var(--blue);
+  color: var(--teal);
+}
+div.b-header {
+  margin-top: 40px;
+}
+div.b-header:nth-child(1) {
+  margin-top: 0;
+}
+div.b-header img {
+  max-width: 100%;
+}
+
+section.c {
+  background-color: var(--teal);
+  color: var(--dark-gray);
+}
+
+section.d {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+section.e {
+  background-color: var(--dark-gray);
+  color: var(--green);
+}
+
+.content section.f {
+  background-color: var(--green);
+  /* position: static; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 12vh;
+  max-height: 12vh;
+  padding: 0px 24px;
+}
+section.f.initial {
+  max-height: 12vh;
+}
+section.f img {
+  max-width: 16px;
+}
 
 .content section {
-    max-height:15vh;
-    overflow: hidden;
-    transition: all 0.5s ease;
+  max-height: 12vh;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  box-sizing: border-box;
+  font-weight: 700;
 }
-
-.content section p {
-    opacity: 0;
+section.initial {
+  max-height: 2vh;
 }
-.content section div{
-    max-height:50px;
-    width:100px;
-    margin-bottom:100px;
+section.a .content-inner {
+  padding-top: 24px;
 }
-
+section.a .content-inner p {
+  font-size: 3.7vh;
+}
+section.a span.text-accent {
+  color: var(--teal);
+}
+div.content-inner {
+  padding: 24px;
+  padding-top: 0px;
+}
 
 /* transition changes length based on max heighht - this is to skirt to the inability to transition between height with a px value and auto height */
-.content section.a.full{
-    max-height:400px;
-    transition: all 0.5s ease;
+.content section.a.full {
+  max-height: 400px;
+  transition: all 0.5s ease;
 }
-.content section.b.full{
-    max-height:1400px;
-    transition: all 1s ease;
+.content section.b.full {
+  max-height: 1500px;
+  transition: all 1s ease;
 }
-.content section.c.full{
-    max-height:1400px;
-    transition: all 1s ease;
+.content section.c.full {
+  max-height: 1400px;
+  transition: all 1s ease;
 }
-.content section.d.full{
-    max-height:1400px;
-    transition: all 1s ease;
+.content section.d.full {
+  max-height: 1400px;
+  transition: all 1s ease;
 }
-.content section.e.full{
-    max-height:1400px;
-    transition: all 1.5s ease;
+.content section.e.full {
+  max-height: 1400px;
+  transition: all 1.5s ease;
 }
-.content section.f.full{
-    max-height:1400px;
-    transition: all 1s ease;
+.content section.f.full {
+  max-height: 1400px;
+  transition: all 1s ease;
 }
-.content section.min{
-    max-height:3vh;
+.content section.min {
+  max-height: 3vh;
+  z-index: 3;
 }
-.content section.a-min{
-    position:sticky;
-    top:0;
-    left:0;
-    width:100%;
+.content section.a-min {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
-.content section.b-min{
-    position:sticky;
-    top:3vh;
-    left:0;
-    width:100%;
+.content section.b-min {
+  position: sticky;
+  top: 3vh;
+  left: 0;
+  width: 100%;
 }
-.content section.c-min{
-    position:sticky;
-    top:6vh;
-    left:0;
-    width:100%;
+.content section.c-min {
+  position: sticky;
+  top: 6vh;
+  left: 0;
+  width: 100%;
 }
-.content section.d-min{
-    position:sticky;
-    top:9vh;
-    left:0;
-    width:100%;
+.content section.d-min {
+  position: sticky;
+  top: 9vh;
+  left: 0;
+  width: 100%;
 }
-.content section.e-min{
-    position:sticky;
-    top:12vh;
-    left:0;
-    width:100%;
+.content section.e-min {
+  position: sticky;
+  top: 12vh;
+  left: 0;
+  width: 100%;
+}
+
+/* DESKTOP STYLES ================================================= */
+@media (min-width: 900px) {
+  section.intro {
+    display: none;
+  }
+  section.content {
+    transform: translate(0);
+    display: flex;
+    padding-bottom: 0;
+  }
+  .desktop-text {
+    display: block;
+    margin-left: 24px;
+    margin-top: 44px;
+    font-weight: 400;
+  }
+  div.desktop-header {
+    display: block;
+  }
+  div.mobile-header {
+    display: none;
+  }
+  .content section div.content-inner {
+    opacity: 1;
+    width: 45vw;
+    margin-top: 280px;
+  }
+  section.content section {
+    max-height: 90vh;
+  }
+  .content section.initial {
+    max-height: 90vh;
+    height: 90vh;
+  }
+  .content section.a.full {
+    max-height: 90vh;
+  }
+  section.desktop-1 {
+    flex: 0 0 50%;
+    overflow-y: scroll;
+  }
+  section.desktop-2 {
+    flex: 0 0 30%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  section.desktop-3 {
+    flex: 0 0 6.6666%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  section.f.initial {
+    position: fixed;
+    z-index: 4;
+    width: 100%;
+    height: 10vh;
+    bottom: 0;
+    left: 0;
+  }
 }
