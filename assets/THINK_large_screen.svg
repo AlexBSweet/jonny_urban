@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="918" height="142" viewBox="0 0 918 142">
+  <defs>
+    <clipPath id="clip-THINK_large_screen">
+      <rect width="918" height="142"/>
+    </clipPath>
+  </defs>
+  <g id="THINK_large_screen" clip-path="url(#clip-THINK_large_screen)">
+    <g id="Group_1" data-name="Group 1" transform="translate(-292 -633)">
+      <path id="Union_3" data-name="Union 3" d="M0,69V15.333H727.917V0H918V15.333h-7.637V69Z" transform="translate(292 648)" fill="#fffe00"/>
+      <text id="_THINK" data-name="//////////////////////////////////////////////////THINK" transform="translate(306 708)" fill="#081eff" font-size="40" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"><tspan x="0" y="0">//////////////////////////////////////////////////THINK</tspan></text>
+    </g>
+  </g>
+</svg>

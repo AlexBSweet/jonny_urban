@@ -24,8 +24,8 @@ const graySection = document.querySelector('section.gray')
 const graySectionHeader = graySection.querySelector('div.mobile-section-header')
 const grayInner = graySection.querySelector('div.gray-inner')
 
-const greenSection = document.querySelector('section.green')
-const greenInner = greenSection.querySelector('div.green-inner')
+// const greenSection = document.querySelector('section.green')
+// const greenInner = greenSection.querySelector('div.green-inner')
 
 // do sections.for each and select all sections for the scrolling part
 let pixels
@@ -151,44 +151,44 @@ const desktopGray = ()=>{
 
 
 const allFunctions = ()=>{
-    document.addEventListener('scroll', ()=>{
-        pixels = window.pageYOffset
+    // document.addEventListener('scroll', ()=>{
+    //     pixels = window.pageYOffset
     
-        let scrollCount = 0
-        if(pixels>20){
-            bodySections.forEach(section=>{
-                section.classList.add('scrolled')
-            })
-            sectionHeaders.forEach(header=>{
-                header.classList.add('scrolled')
-            })
+    //     let scrollCount = 0
+    //     if(pixels>20){
+    //         bodySections.forEach(section=>{
+    //             section.classList.add('scrolled')
+    //         })
+    //         sectionHeaders.forEach(header=>{
+    //             header.classList.add('scrolled')
+    //         })
             
-        } else{
-            pinkSection.classList.remove('scrolled')
-            blueSection.classList.remove('scrolled')
-            tealSection.classList.remove('scrolled')
-            whiteSection.classList.remove('scrolled')
-            graySection.classList.remove('scrolled')
-        }
-        if(pixels<40){
-            pinkSection.classList.remove('open')
-            pinkSectionHeader.classList.remove('scrolled')
-            pinkInner.classList.add('hidden')
-            blueSection.classList.remove('open')
-            blueSectionHeader.classList.remove('scrolled')
-            blueInner.classList.add('hidden')
-            tealSection.classList.remove('open')
-            tealSectionHeader.classList.remove('scrolled')
-            tealInner.classList.add('hidden')
-            whiteSection.classList.remove('open')
-            whiteSectionHeader.classList.remove('scrolled')
-            whiteInner.classList.add('hidden')
-            graySection.classList.remove('open')
-            graySectionHeader.classList.remove('scrolled')
-            grayInner.classList.add('hidden')
-        }
+    //     } else{
+    //         pinkSection.classList.remove('scrolled')
+    //         blueSection.classList.remove('scrolled')
+    //         tealSection.classList.remove('scrolled')
+    //         whiteSection.classList.remove('scrolled')
+    //         graySection.classList.remove('scrolled')
+    //     }
+    //     if(pixels<40){
+    //         pinkSection.classList.remove('open')
+    //         pinkSectionHeader.classList.remove('scrolled')
+    //         pinkInner.classList.add('hidden')
+    //         blueSection.classList.remove('open')
+    //         blueSectionHeader.classList.remove('scrolled')
+    //         blueInner.classList.add('hidden')
+    //         tealSection.classList.remove('open')
+    //         tealSectionHeader.classList.remove('scrolled')
+    //         tealInner.classList.add('hidden')
+    //         whiteSection.classList.remove('open')
+    //         whiteSectionHeader.classList.remove('scrolled')
+    //         whiteInner.classList.add('hidden')
+    //         graySection.classList.remove('open')
+    //         graySectionHeader.classList.remove('scrolled')
+    //         grayInner.classList.add('hidden')
+    //     }
     
-    })
+    // })
     
     
 
